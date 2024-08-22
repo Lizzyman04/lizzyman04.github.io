@@ -1,0 +1,181 @@
+/* Reset de margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh;
+    color: #222;
+}
+
+.click a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 28px 20px 0 24px;
+    display: inline-block;
+    transition: text-decoration 0.3s;
+}
+
+.click a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    max-height: 90vh;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 15px;
+}
+
+.color {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all ease .35s;
+}
+
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, 100px);
+        grid-template-rows: repeat(2, 100px);
+        gap: 10px;
+    }
+
+    .color {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .game-container {
+        grid-template-columns: repeat(2, 80px);
+        grid-template-rows: repeat(2, 80px);
+        gap: 8px;
+    }
+
+    .color {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.color.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.green {
+    background-color: #81c784;
+}
+
+.green.active {
+    background-color: #66bb6a;
+}
+
+.red {
+    background-color: #e57373;
+}
+
+.red.active {
+    background-color: #ef5350;
+}
+
+.yellow {
+    background-color: #fff176;
+}
+
+.yellow.active {
+    background-color: #ffee58;
+}
+
+.blue {
+    background-color: #64b5f6;
+}
+
+.blue.active {
+    background-color: #42a5f5;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+}
+
+#start-button:hover {
+    background-color: #f1f1f1;
+    border-color: #ccc;
+}
+
+#message {
+    margin-top: 15px;
+    color: #555;
+    font-size: 16px;
+    padding: 0 16px;
+}
+
+#high-score {
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+}
+
+.sound {
+    color: #333;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M3.158 13.93a3.75 3.75 0 0 1 0-3.86a1.5 1.5 0 0 1 .993-.7l1.693-.339a.45.45 0 0 0 .258-.153L8.17 6.395c1.182-1.42 1.774-2.129 2.301-1.938S11 5.572 11 7.42v9.162c0 1.847 0 2.77-.528 2.962c-.527.19-1.119-.519-2.301-1.938L6.1 15.122a.45.45 0 0 0-.257-.153L4.15 14.63a1.5 1.5 0 0 1-.993-.7Z'/%3E%3Cpath stroke-linecap='round' d='M15.536 8.464a5 5 0 0 1 .027 7.044m4.094-9.165a8 8 0 0 1 .044 11.27'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.sound.muted {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M3.158 13.93a3.75 3.75 0 0 1 0-3.86a1.5 1.5 0 0 1 .993-.7l1.693-.339a.45.45 0 0 0 .258-.153L8.17 6.395c1.182-1.42 1.774-2.129 2.301-1.938S11 5.572 11 7.42v9.162c0 1.847 0 2.77-.528 2.962c-.527.19-1.119-.519-2.301-1.938L6.1 15.122a.45.45 0 0 0-.257-.153L4.15 14.63a1.5 1.5 0 0 1-.993-.7Z'/%3E%3Cpath stroke-linecap='round' d='m15 15l6-6m0 6l-6-6'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
